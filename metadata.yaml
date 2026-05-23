@@ -1,0 +1,5 @@
+name: astrbot_plugin_points_mall
+desc: 积分商城插件：包含签到、群聊活跃度积分、超级管理员和管理员独立上架（管理员需授权）、积分查询与手动增减、私聊购买功能。
+version: 1.0.0
+author: Liangyu-G & ATRI
+entry: main.py

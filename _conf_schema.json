@@ -1,0 +1,53 @@
+{
+  "items": [
+    {
+      "id": "super_admins",
+      "type": "list",
+      "label": "超级管理员 QQ 列表",
+      "desc": "拥有最高权限，可以直接授权商品上架和调整全员积分",
+      "default": []
+    },
+    {
+      "id": "admins",
+      "type": "list",
+      "label": "普通管理员 QQ 列表",
+      "desc": "可提交商品上架申请",
+      "default": []
+    },
+    {
+      "id": "sign_min",
+      "type": "number",
+      "label": "每日签到最小积分",
+      "desc": "每日签到可获得的最小积分值",
+      "default": 10
+    },
+    {
+      "id": "sign_max",
+      "type": "number",
+      "label": "每日签到最大积分",
+      "desc": "每日签到可获得的最大积分值",
+      "default": 50
+    },
+    {
+      "id": "active_text_len",
+      "type": "number",
+      "label": "活跃文字字数阈值",
+      "desc": "超过此字数视为有效活跃行为（防刷屏）",
+      "default": 10
+    },
+    {
+      "id": "active_point_reward",
+      "type": "number",
+      "label": "单次活跃积分奖励",
+      "desc": "满足活跃条件后奖励的积分数",
+      "default": 1
+    },
+    {
+      "id": "active_cooldown",
+      "type": "number",
+      "label": "活跃积分冷却时间 (秒)",
+      "desc": "为防止刷屏刷分，同一用户两次奖励之间的间隔时间",
+      "default": 60
+    }
+  ]
+}
