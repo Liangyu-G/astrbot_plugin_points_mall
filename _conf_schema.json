@@ -1,53 +1,62 @@
 {
-  "items": [
-    {
-      "id": "super_admins",
-      "type": "list",
-      "label": "超级管理员 QQ 列表",
-      "desc": "拥有最高权限，可以直接授权商品上架和调整全员积分",
-      "default": []
-    },
-    {
-      "id": "admins",
-      "type": "list",
-      "label": "普通管理员 QQ 列表",
-      "desc": "可提交商品上架申请",
-      "default": []
-    },
-    {
-      "id": "sign_min",
-      "type": "number",
-      "label": "每日签到最小积分",
-      "desc": "每日签到可获得的最小积分值",
-      "default": 10
-    },
-    {
-      "id": "sign_max",
-      "type": "number",
-      "label": "每日签到最大积分",
-      "desc": "每日签到可获得的最大积分值",
-      "default": 50
-    },
-    {
-      "id": "active_text_len",
-      "type": "number",
-      "label": "活跃文字字数阈值",
-      "desc": "超过此字数视为有效活跃行为（防刷屏）",
-      "default": 10
-    },
-    {
-      "id": "active_point_reward",
-      "type": "number",
-      "label": "单次活跃积分奖励",
-      "desc": "满足活跃条件后奖励的积分数",
-      "default": 1
-    },
-    {
-      "id": "active_cooldown",
-      "type": "number",
-      "label": "活跃积分冷却时间 (秒)",
-      "desc": "为防止刷屏刷分，同一用户两次奖励之间的间隔时间",
-      "default": 60
-    }
-  ]
+  "super_admins": {
+    "type": "list",
+    "description": "超级管理员 QQ 列表",
+    "hint": "拥有最高权限，可以授权商品上架、管理自动发货订单、强制退款、商城自检、设置已售库存删除周期和调整全员积分",
+    "default": []
+  },
+  "admins": {
+    "type": "list",
+    "description": "普通管理员 QQ 列表",
+    "hint": "可提交商品上架申请，并管理自己上架商品的自动发货库存",
+    "default": []
+  },
+  "sign_min": {
+    "type": "int",
+    "description": "每日签到最小积分",
+    "hint": "每日签到可随机获得的最小积分值",
+    "default": 10
+  },
+  "sign_max": {
+    "type": "int",
+    "description": "每日签到最大积分",
+    "hint": "每日签到可随机获得的最大积分值",
+    "default": 50
+  },
+  "active_text_len": {
+    "type": "int",
+    "description": "活跃文字字数阈值",
+    "hint": "群聊消息文字数必须严格超过该值才奖励积分。默认 10 表示至少 11 个字",
+    "default": 10
+  },
+  "active_point_reward": {
+    "type": "int",
+    "description": "单次活跃积分奖励",
+    "hint": "满足活跃条件后奖励的积分数",
+    "default": 1
+  },
+  "active_cooldown": {
+    "type": "int",
+    "description": "活跃积分冷却时间（秒）",
+    "hint": "为防止刷屏刷分，同一用户两次活跃奖励之间的最小间隔时间",
+    "default": 60
+  },
+  "low_stock_warn_threshold": {
+    "type": "int",
+    "description": "低库存提醒阈值",
+    "hint": "库存型商品购买后，如果剩余可用库存小于或等于该值，会私聊通知超级管理员和上架人，同一剩余库存数只提醒一次",
+    "default": 3
+  },
+  "sold_stock_retention_days": {
+    "type": "int",
+    "description": "已售库存保留天数",
+    "hint": "库存型商品售出后，真实库存内容进入删除流程并在该天数后自动清理。默认 30；0 表示售出后下次保存/清理立即删除；-1 表示不自动删除",
+    "default": 30
+  },
+  "use_t2i": {
+    "type": "bool",
+    "description": "启用框架 T2I",
+    "hint": "插件回复接入 AstrBot 文本转图片。真实发货内容会强制禁用 T2I，避免卡密被转成图片",
+    "default": true
+  }
 }
